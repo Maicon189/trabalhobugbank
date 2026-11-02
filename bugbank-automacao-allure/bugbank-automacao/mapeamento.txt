@@ -1,0 +1,141 @@
+MAPEAMENTO DE ELEMENTOS - BUGBANK (https://bugbank.netlify.app/)
+
+################################
+TELA DE LOGIN (card de login)
+
+Campo de e-mail
+
+css = .card__login input[name='email']
+
+Campo de senha
+
+css = .card__login input[name='password']
+
+Botao Acessar
+
+xpath = //div[contains(@class,'card__login')]//button[normalize-space()='Acessar']
+
+Botao Registrar
+
+xpath = //div[contains(@class,'card__login')]//button[normalize-space()='Registrar']
+
+################################
+TELA DE CADASTRO (card de registro)
+
+Link Voltar ao login
+
+xpath = //*[self::a or self::button][normalize-space()='Voltar ao login']
+
+Campo de e-mail
+
+css = .card__register input[name='email']
+
+Campo de nome
+
+css = .card__register input[name='name']
+
+Campo de senha
+
+css = .card__register input[name='password']
+
+Campo de confirmacao de senha
+
+css = .card__register input[name='passwordConfirmation']
+
+Toggle "Criar conta com saldo ?"
+
+id = toggleAddBalance
+
+Botao Cadastrar
+
+xpath = //div[contains(@class,'card__register')]//button[normalize-space()='Cadastrar']
+
+################################
+MODAL DE MENSAGEM (cadastro e transferencia)
+
+Texto do modal (ex.: "A conta 123-4 foi criada com sucesso")
+
+id = modalText
+
+Botao Fechar do modal
+
+id = btnCloseModal
+
+################################
+TELA HOME (apos login)
+
+Texto com o nome do usuario
+
+id = textName
+
+Texto do saldo em conta
+
+id = textBalance
+
+Botao Transferencia
+
+id = btn-TRANSFERÊNCIA
+
+Botao Extrato
+
+id = btn-EXTRATO
+
+Botao Sair
+
+id = btnExit
+
+################################
+TELA DE TRANSFERENCIA
+
+Campo numero da conta
+
+name = accountNumber
+
+Campo digito da conta
+
+name = digit
+
+Campo valor da transferencia
+
+name = transferValue
+
+Campo descricao
+
+name = description
+
+Botao Transferir agora
+
+xpath = //button[normalize-space()='Transferir agora']
+
+Botao Voltar
+
+id = btnBack
+
+################################
+TELA DE EXTRATO
+
+Texto do saldo disponivel
+
+id = textBalanceAvailable
+
+Descricao das transacoes (lista)
+
+id = textDescription
+
+Valor das transacoes (lista)
+
+id = textTransferValue
+
+Botao Voltar
+
+id = btnBack
+
+################################
+OBSERVACOES
+
+- Os botoes ficam parcialmente cobertos por outros elementos da pagina
+  (ex.: div login__buttons, pages__FormBackground). Por isso os cliques
+  usam JsUtils.clicarSeguro (rola ate o elemento e, se necessario, clica via JavaScript).
+- O formulario de cadastro mantem os dados entre um cadastro e outro. Por isso os
+  campos sao substituidos (JsUtils.digitar) e o estado do toggle de saldo e controlado
+  pelo codigo (CadastroTask), pois o isSelected() nao reflete o estado real dele.
