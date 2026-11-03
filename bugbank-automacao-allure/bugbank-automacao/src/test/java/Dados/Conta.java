@@ -25,7 +25,7 @@ public class Conta {
         this.saldo = comSaldo ? SALDO_INICIAL_BUGBANK : 0.0;
     }
 
-    /** Dados lidos de src/main/resources/Properties/contas.properties. */
+
     public static Conta origem() {
         return doProperties("origem");
     }

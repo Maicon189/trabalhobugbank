@@ -15,7 +15,7 @@ public class TestBase extends DriverManager {
 
     private static final String URL = FileOperations.getProperties("url").getProperty("index");
 
-    /** Se o teste falhar, anexa um print da tela ao relatorio do Allure antes de fechar o navegador. */
+
     @RegisterExtension
     public final TestExecutionExceptionHandler screenshotNaFalha = (context, erro) -> {
         try {

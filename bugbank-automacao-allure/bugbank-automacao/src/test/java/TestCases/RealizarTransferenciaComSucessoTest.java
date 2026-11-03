@@ -39,17 +39,17 @@ public class RealizarTransferenciaComSucessoTest extends TestBase {
         Conta contaOrigem = Conta.origem();
         Conta contaDestino = Conta.destino();
 
-        // 1. Cadastra as duas contas, ambas com saldo
+
         cadastroTask.cadastrarConta(contaOrigem);
         cadastroTask.cadastrarConta(contaDestino);
 
-        // 2. Conta de origem: transfere e valida o extrato (saldo debitado)
+
         loginTask.efetuarLogin(contaOrigem);
         transferenciaTask.realizarTransferencia(contaOrigem, contaDestino, valor, descricao);
         extratoTask.validarExtrato(contaOrigem, descricao, valor);
         loginTask.efetuarLogout();
 
-        // 3. Conta de destino: valida o extrato (valor recebido)
+
         loginTask.efetuarLogin(contaDestino);
         extratoTask.validarExtrato(contaDestino, descricao, valor);
         loginTask.efetuarLogout();

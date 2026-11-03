@@ -20,10 +20,7 @@ public class CadastroTask {
     private final GenericPage genericPage;
     private final GenericValidacao genericValidacao;
 
-    /**
-     * O isSelected() do Selenium nao reflete o estado real do toggle customizado
-     * do BugBank, entao o proprio codigo lembra se ele esta ligado.
-     */
+
     private boolean toggleLigado = false;
 
     public CadastroTask(WebDriver driver) {
@@ -59,7 +56,7 @@ public class CadastroTask {
         JsUtils.clicarSeguro(driver, cadastroPage.getVoltarLoginLink());
     }
 
-    /** O BugBank informa no modal: "A conta 123-4 foi criada com sucesso". */
+
     private void guardarNumeroDaConta(Conta conta, String mensagem) {
         Matcher matcher = Pattern.compile("(\\d+)-(\\d+)").matcher(mensagem);
         Assertions.assertTrue(matcher.find(),

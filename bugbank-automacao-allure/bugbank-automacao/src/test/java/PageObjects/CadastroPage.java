@@ -10,7 +10,7 @@ public class CadastroPage extends BasePage {
         super(driver);
     }
 
-    /** Verifica (sem esperar) se o formulario de cadastro ja esta na tela. */
+
     public boolean isFormularioVisivel() {
         var campos = driver.findElements(By.cssSelector(".card__register input[name='email']"));
         return !campos.isEmpty() && campos.get(0).isDisplayed();

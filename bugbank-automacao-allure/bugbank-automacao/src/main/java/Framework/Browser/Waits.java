@@ -17,13 +17,13 @@ public class Waits {
         this.driver = driver;
     }
 
-    /** Espera dentro das classes de page, ou seja, na busca do elemento. */
+
     public WebElement visbilityOfElement(By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    /** Espera dentro das classes de task, ou seja, entre uma ação e outra. */
+
     public WebElement loadElement(WebElement element) {
         try {
             return new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(element));

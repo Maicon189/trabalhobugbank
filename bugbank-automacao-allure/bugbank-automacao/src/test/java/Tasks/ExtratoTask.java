@@ -21,7 +21,7 @@ public class ExtratoTask {
         extratoValidacao = new ExtratoValidacao(this.driver);
     }
 
-    /** Abre o extrato, valida o saldo e a transferencia (enviada ou recebida) e volta para a home. */
+
     public void validarExtrato(Conta conta, String descricao, double valorTransferencia) {
         JsUtils.clicarSeguro(driver, homePage.getExtratoButton());
         extratoValidacao.validacaoSaldoNoExtrato(conta);

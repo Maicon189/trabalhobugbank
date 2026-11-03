@@ -9,10 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-/**
- * Base dos Page Objects. O BugBank e uma aplicacao React (os elementos
- * aparecem de forma assincrona), por isso todo acesso espera o elemento.
- */
 public abstract class BasePage {
 
     protected final WebDriver driver;
